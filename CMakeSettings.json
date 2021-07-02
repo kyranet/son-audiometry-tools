@@ -1,0 +1,50 @@
+{
+	"configurations": [
+		{
+			"name": "x64-Debug",
+			"generator": "Ninja",
+			"configurationType": "Debug",
+			"inheritEnvironments": [
+				"msvc_x64_x64"
+			],
+			"enableClangTidyCodeAnalysis": true,
+			"buildRoot": "${projectDir}\\build",
+			"installRoot": "${projectDir}\\build\\install\\${name}",
+			"variables": [
+				{
+					"name": "BUILD_GMOCK",
+					"value": "OFF",
+					"type": "BOOL"
+				},
+				{
+					"name": "AUTOOLS_BUILD_TESTS",
+					"value": "ON",
+					"type": "BOOL"
+				}
+			]
+		},
+		{
+			"name": "x64-Release",
+			"generator": "Ninja",
+			"configurationType": "RelWithDebInfo",
+			"inheritEnvironments": [
+				"msvc_x64_x64"
+			],
+			"enableClangTidyCodeAnalysis": true,
+			"buildRoot": "${projectDir}\\build",
+			"installRoot": "${projectDir}\\build\\install\\${name}",
+			"variables": [
+				{
+					"name": "BUILD_GMOCK",
+					"value": "OFF",
+					"type": "BOOL"
+				},
+				{
+					"name": "AUTOOLS_BUILD_TESTS",
+					"value": "ON",
+					"type": "BOOL"
+				}
+			]
+		}
+	]
+}
