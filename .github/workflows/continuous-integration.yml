@@ -7,20 +7,6 @@ on:
   pull_request:
 
 jobs:
-  AuToolsBuildUbuntu:
-    name: Building AuTools (Ubuntu)
-    runs-on: ubuntu-latest
-    if: "!contains(needs.pre_ci.outputs.commit_message, '[skip ci]')"
-    steps:
-      - name: Checkout Project
-        uses: actions/checkout@v2
-        with:
-          submodules: 'true'
-
-      - uses: ammaraskar/gcc-problem-matcher@master
-      - name: Build Project
-        run: make
-
   AuToolsBuildWindows:
     name: Building AuTools (Windows)
     runs-on: windows-latest

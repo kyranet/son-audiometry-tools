@@ -4,9 +4,11 @@ set(AUTOOLS_SOURCES
 add_library(autools SHARED ${AUTOOLS_SOURCES})
 target_compile_features(autools PUBLIC cxx_std_17)
 
+target_link_libraries(autools $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/deps/fmod/lib/fmod64_vc.lib>)
 target_include_directories(autools
 	PUBLIC
 	$<BUILD_INTERFACE:${autools_SOURCE_DIR}/include>
+	$<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/deps/fmod/include>
 	$<INSTALL_INTERFACE:include>)
 
 if (MSVC)
